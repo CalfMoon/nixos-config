@@ -19,6 +19,17 @@
     font.name = "JetBrains Mono";
     font.size = 12;
     catppuccin.icon.enable = true;
-    theme.name = "catppuccin-mocha-green-standard+default";
+    catppuccin.enable = true;
+  };
+
+  programs = {
+    bat = {
+      enable = true;
+      catppuccin.enable = true;
+    };
+    btop = {
+      enable = true;
+      catppuccin.enable = true;
+    };
   };
 }

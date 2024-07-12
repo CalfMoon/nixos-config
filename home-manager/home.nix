@@ -16,11 +16,17 @@
       enable = true;
       userName = "Kritagya Bhattarai (CalfMoon)";
       userEmail = "kritagyabhattarai@proton.me";
+      extraConfig.init.defaultBranch = "main";
     };
+
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    TERMINAL = "kitty";
+    TERM = "kitty";
+    BROWSER = "brave";
+    FONT = "JetBrains Mono";
   };
 
   xdg.mimeApps.defaultApplications = {
