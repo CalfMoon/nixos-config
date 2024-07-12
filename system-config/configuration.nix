@@ -26,14 +26,12 @@
     enable = true;
     device = "/dev/sda";
     useOSProber = true;
-    theme = pkgs.fetchFromGitHub
-      {
-        owner = "catppuccin";
-        repo = "grub";
-        rev = "88f6124757331fd3a37c8a69473021389b7663ad";
-        sha256 = "sha256-e8XFWebd/GyX44WQI06Cx6sOduCZc5z7/YhweVQGMGY=";
-        fetchSubmodules = true;
-      } + "/src/catppuccin-mocha-grub-theme";
+    catppuccin.enable = true;
+  };
+
+  console = {
+    font = "JetBrains Mono";
+    catppuccin.enable = true;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -68,11 +66,20 @@
     xterm
   ];
 
+  catppuccin = {
+    flavor = "mocha";
+    accent = "green";
+  };
+
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     package = pkgs.kdePackages.sddm;
-    theme = "catppuccin-mocha";
+    catppuccin = {
+      enable = true;
+      font = "JetBrains Mono";
+      fontSize = "12";
+    };
   };
 
   programs = {
@@ -181,12 +188,6 @@
     trash-cli
     pulseaudio
     mpc-cli
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "JetBrains Mono";
-      fontSize = "12";
-      loginBackground = false;
-    })
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     gnupg
     papirus-icon-theme
