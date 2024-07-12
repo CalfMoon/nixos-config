@@ -1,23 +1,17 @@
-{ config, pkgs, inputs,  ... }:
+{ pkgs, ... }:
 {
-  imports = [ ./applications/hyprland.nix ];
-# Home Manager needs a bit of information about you and the paths it should
-# manage.
+  imports = [ ./applications/hyprland.nix ./applications/theme.nix ];
+  # Home Manager needs a bit of information about you and the paths it should
+  # manage.
   home.username = "mooney";
   home.homeDirectory = "/home/mooney";
 
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.packages = with pkgs; [
+  ];
 
-    home.packages = with pkgs; [
-    ];
+  home.file = { };
 
-
-# Home Manager is pretty good at managing dotfiles. The primary way to manage
-# plain files is through 'home.file'.
-  home.file = {
-  };
-
-  programs =  {
+  programs = {
     git = {
       enable = true;
       userName = "Kritagya Bhattarai (CalfMoon)";
@@ -26,23 +20,17 @@
   };
 
   home.sessionVariables = {
-# EDITOR = "emacs";
+    # EDITOR = "emacs";
   };
 
   xdg.mimeApps.defaultApplications = {
-    "text/plain" = ["neovim.desktop"];
-    "application/pdf" = ["zathura.desktop"];
-    "image/*" = ["loupe.desktop"];
+    "text/plain" = [ "neovim.desktop" ];
+    "application/pdf" = [ "zathura.desktop" ];
+    "image/*" = [ "loupe.desktop" ];
   };
 
   services.syncthing.enable = true;
 
-  qt={
-    enable = true;
-    platformTheme.name = "gtk";
-    style.name = "catppuccin-mocha";
-    style.package = pkgs.catppuccin-qt5ct;
-  };
-
   programs.home-manager.enable = true;
+  home.stateVersion = "24.05";
 }

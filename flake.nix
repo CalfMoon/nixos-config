@@ -1,42 +1,44 @@
 {
   description = "A simple NixOS flake";
 
-  inputs={
+  inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = {nixpkgs, home-manager, split-monitor-workspaces, hyprland, ...} @ inputs: {
+  outputs = { nixpkgs, home-manager, split-monitor-workspaces, hyprland, catppuccin, ... } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
+
       system = "x86_64-linux";
       modules = [
         ./system-config/configuration.nix
+        catppuccin.nixosModules.catppuccin
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            users.mooney.imports = [
+              ./home-manager/home.nix
+              catppuccin.homeManagerModules.catppuccin
+            ];
 
-              users.mooney = import ./home-manager/home.nix;
-
-              extraSpecialArgs = {
-                inherit split-monitor-workspaces;
-                inherit hyprland;
-              };
+            extraSpecialArgs = {
+              inherit split-monitor-workspaces hyprland;
             };
-          }
+          };
+        }
       ];
     };
   };
