@@ -18,24 +18,20 @@
       userEmail = "kritagyabhattarai@proton.me";
       extraConfig.init.defaultBranch = "main";
     };
-
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    TERMINAL = "kitty";
-    TERM = "kitty";
-    BROWSER = "brave";
-    FONT = "JetBrains Mono";
-  };
-
-  xdg.mimeApps.defaultApplications = {
-    "text/plain" = [ "neovim.desktop" ];
-    "application/pdf" = [ "zathura.desktop" ];
-    "image/*" = [ "loupe.desktop" ];
   };
 
   services.syncthing.enable = true;
+
+  home.sessionVariables = { };
+
+  xdg.mime.enable = true;
+  xdg.mimeApps.enable = true;
+  xdg.mimeApps.defaultApplications = {
+    "text/*" = [ "nvim.desktop" ];
+    "image/*" = [ "org.gnome.Loupe.desktop" ];
+
+    "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
+  };
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";

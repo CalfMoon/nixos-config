@@ -1,14 +1,16 @@
-{ split-monitor-workspaces, hyprland, ... }:
+{ pkgs, inputs, ... }:
 {
   wayland.windowManager.hyprland = {
-    plugins = [ split-monitor-workspaces.packages.x86_64-linux.split-monitor-workspaces ];
-    package = hyprland.packages.x86_64-linux.hyprland;
+    plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       "$mainMod" = "SUPER";
+
       bind = [
         "$mainMod, Q, killactive"
         # most used applications
@@ -17,10 +19,10 @@
         "$mainMod CTRL, Return, exec, $BROWSER"
 
         # terminal based applications
-        "$mainMod, I, exec, kitty -e lf"
-        "$mainMod, O, exec, kitty -e ncmpcpp"
-        "$mainMod, P, exec, kitty -e btop"
-        "$mainMod, C, exec, hyprpicker -a"
+        "$mainMod, I, exec, $TERMINAL -e lf"
+        "$mainMod, O, exec, $TERMINAL -e ncmpcpp"
+        "$mainMod, P, exec, $TERMINAL -e btop"
+        "$mainMod, C, exec, $TERMINAL -a"
 
         #rofi menus
         "$mainMod, D, exec, exec launcher"

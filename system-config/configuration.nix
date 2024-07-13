@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 {
   imports = [ ./hardware-configuration.nix ];
@@ -17,7 +13,7 @@
   boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   boot.kernelModules = [ "v4l2loopback" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.extraModprobeConfig = ''options v4l2loopback video_nr=0 exclusive_caps=1 card_label="Virtual Camera"'';
-  boot.kernelParams = [ "nvidia_drm.modeset=1" ];
+  boot.kernelParams = [ "nvidia_drm.modeset=1" "nvidia_drm.fbdev=1" ];
 
   nix.settings.allowed-users = [ "mooney" ];
 
@@ -30,7 +26,6 @@
   };
 
   console = {
-    font = "JetBrains Mono";
     catppuccin.enable = true;
   };
 
@@ -140,10 +135,7 @@
 
   services.udisks2.enable = true;
 
-  services.syncthing = {
-    enable = true;
-    user = "mooney";
-  };
+  services.hypridle.enable = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
@@ -200,6 +192,7 @@
     cmake
     gnumake
     rustup
+    handlr
 
     vscodium
     neovim
@@ -209,6 +202,7 @@
     luajitPackages.luarocks
     python3
     nodejs_22
+
 
     waybar
     waypaper
@@ -228,6 +222,7 @@
     calcurse
     fastfetch
     hyprpicker
+    syncthing
 
     zathura
     kitty

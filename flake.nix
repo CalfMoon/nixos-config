@@ -17,7 +17,7 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { nixpkgs, home-manager, split-monitor-workspaces, hyprland, catppuccin, ... } @ inputs: {
+  outputs = { nixpkgs, home-manager, catppuccin, ... } @inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
 
@@ -34,9 +34,7 @@
               catppuccin.homeManagerModules.catppuccin
             ];
 
-            extraSpecialArgs = {
-              inherit split-monitor-workspaces hyprland;
-            };
+            extraSpecialArgs = { inherit inputs; };
           };
         }
       ];
