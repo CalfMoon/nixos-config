@@ -1,6 +1,6 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 {
-  imports = [ ./hardware-configuration.nix ./modules/packages.nix .modules/display.nix ];
+  imports = [ ./hardware-configuration.nix ./modules/packages.nix ./modules/display.nix ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -55,6 +55,10 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 8384 22000 53317 6600 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 53317 6600 ];

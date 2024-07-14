@@ -69,7 +69,6 @@
     spotube
     qbittorrent
     gimp
-    virtualbox
 
     wine
     lutris
