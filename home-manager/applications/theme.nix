@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ ... }:
 {
   catppuccin = {
     accent = "green";
@@ -12,6 +12,7 @@
     platformTheme.name = "kvantum";
     style.name = "kvantum";
     style.catppuccin.enable = true;
+    style.catppuccin.apply = false;
   };
 
   gtk = {
