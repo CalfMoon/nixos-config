@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./applications/hyprland.nix ./applications/theme.nix ];
+  imports = [ ./applications/hyprland.nix ./applications/theme.nix ./applications/lf.nix ./applications/mimeapps.nix ./applications/dunst.nix ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mooney";
@@ -23,15 +23,6 @@
   services.syncthing.enable = true;
 
   home.sessionVariables = { };
-
-  xdg.mime.enable = true;
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.defaultApplications = {
-    "text/*" = [ "nvim.desktop" ];
-    "image/*" = [ "org.gnome.Loupe.desktop" ];
-
-    "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
-  };
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";
