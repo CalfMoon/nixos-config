@@ -9,11 +9,9 @@
     unrar
     trash-cli
     pulseaudio
-    mpc-cli
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     gnupg
     papirus-icon-theme
-    udiskie
     atuin
     wl-clipboard
     meson
@@ -33,24 +31,18 @@
     python3
     nodejs_22
 
-    waybar
     waypaper
-    swww
-    dunst
     rofi-wayland
-    grimblast
 
     ncmpcpp
     btop
     lf
-    ctpv
     eza
     pulsemixer
     pavucontrol
     bat
     calcurse
     fastfetch
-    hyprpicker
     syncthing
 
     zathura
