@@ -28,6 +28,7 @@
       enable = true;
       catppuccin.enable = true;
     };
+
     btop = {
       enable = true;
       catppuccin.enable = true;

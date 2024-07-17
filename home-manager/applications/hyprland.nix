@@ -5,9 +5,7 @@
   wayland.windowManager.hyprland = {
     plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  };
 
-  wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       source = [ "./theme.conf" "./monitor.conf" ];
@@ -40,6 +38,7 @@
         touchpad = {
           natural_scroll = "no";
         };
+
         sensitivity = 0;
       };
 
