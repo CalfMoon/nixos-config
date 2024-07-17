@@ -2,6 +2,13 @@
 {
   xdg.configFile."hypr/theme.conf".source = ./mocha.conf;
 
+  home.packages = with pkgs; [
+    ctpv
+    waypaper
+    swww
+    rofi-wayland
+  ];
+
   wayland.windowManager.hyprland = {
     plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -14,7 +21,7 @@
       "$accentAlpha" = "$greenAlpha";
 
       exec-once = [
-        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/waybar & ${pkgs.hypridle}/bin/hypridle"
+        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udikie & ${pkgs.hypridle}/bin/hypridle"
         "qbittorrent"
       ];
 

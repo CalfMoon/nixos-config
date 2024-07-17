@@ -3,7 +3,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    mpd
     zip
     unzip
     unrar
@@ -19,7 +18,6 @@
     cmake
     gnumake
     rustup
-    handlr
 
     vscodium
     neovim
@@ -30,10 +28,6 @@
     python3
     nodejs_22
 
-    waypaper
-    swww
-    rofi-wayland
-
     ncmpcpp
     btop
     lf
@@ -43,7 +37,6 @@
     bat
     calcurse
     fastfetch
-    syncthing
 
     zathura
     kitty

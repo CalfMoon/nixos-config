@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  home.packages = [ pkgs.ctpv ];
+
   programs.lf = {
     enable = true;
 
@@ -108,8 +110,8 @@
     };
 
     extraConfig = ''
-      &ctpv -s $id
-      &ctpvquit $id
+      &${pkgs.ctpv}/bin/ctpv -s $id
+      &${pkgs.ctpv}/bin/ctpvquit $id
     '';
   };
 

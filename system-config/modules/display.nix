@@ -7,6 +7,8 @@
 
   services.xserver.enable = true;
 
+  services.xserver.excludePackages = [ pkgs.xterm ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
@@ -54,6 +56,7 @@
   };
 
   services.xserver.desktopManager.budgie.enable = true;
+
   environment.budgie.excludePackages = with pkgs; [
     gnome-terminal
     mate.atril
@@ -62,6 +65,6 @@
     mate.pluma
     mate.engrampa
     vlc
-    xterm
   ];
+  services.gnome.rygel.enable = false;
 }
