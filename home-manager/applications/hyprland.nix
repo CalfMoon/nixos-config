@@ -116,9 +116,10 @@
 
       bind = [
         "$mainMod, Q, killactive"
+
         # most used applications
         "$mainMod, Return, exec, $TERMINAL"
-        "$mainMod SHIFT, Return, exec, $TERMINAL -e $EDITOR"
+        "$mainMod SHIFT, Return, exec, $EDITOR"
         "$mainMod CTRL, Return, exec, $BROWSER"
 
         # terminal based applications
