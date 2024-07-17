@@ -5,6 +5,7 @@
     ./applications/kitty.nix
     ./applications/zathura.nix
     ./applications/waybar.nix
+    ./applications/ncmpcpp.nix
     ./applications/hyprland.nix
     ./applications/git.nix
     ./applications/dunst.nix
