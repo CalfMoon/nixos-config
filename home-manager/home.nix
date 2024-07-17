@@ -1,13 +1,19 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  imports = [ ./applications/hyprland.nix ./applications/theme.nix ./applications/lf.nix ./applications/mimeapps.nix ./applications/dunst.nix ];
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  imports = [
+    ./applications/lf.nix
+    ./applications/kitty.nix
+    ./applications/zathura.nix
+    ./applications/waybar.nix
+    ./applications/hyprland.nix
+    ./applications/dunst.nix
+    ./applications/mpd.nix
+    ./applications/theme.nix
+    ./applications/mimeapps.nix
+  ];
+
   home.username = "mooney";
   home.homeDirectory = "/home/mooney";
-
-  home.packages = with pkgs; [
-  ];
 
   home.file = { };
 
