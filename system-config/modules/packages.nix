@@ -8,7 +8,6 @@
     unzip
     unrar
     trash-cli
-    pulseaudio
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     gnupg
     papirus-icon-theme
@@ -32,6 +31,7 @@
     nodejs_22
 
     waypaper
+    swww
     rofi-wayland
 
     ncmpcpp

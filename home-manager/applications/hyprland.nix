@@ -138,9 +138,9 @@
         "$mainMod SHIFT, S, exec, ${pkgs.grimblast}/bin/grimblast copy area"
 
         #volume control
-        "$mainMod, bracketleft, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
-        "$mainMod, bracketright, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
-        "$mainMod, backshash, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        "$mainMod, bracketleft, exec, ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        "$mainMod, bracketright, exec, ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
+        "$mainMod, backslash, exec, ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
         #music control
         "$mainMod SHIFT, bracketleft, exec, ${pkgs.mpc-cli}/bin/mpc prev"
