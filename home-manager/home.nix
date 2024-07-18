@@ -7,9 +7,11 @@
     ./applications/waybar.nix
     ./applications/ncmpcpp.nix
     ./applications/hyprland.nix
+    ./applications/enviroment-variable.nix
     ./applications/git.nix
     ./applications/dunst.nix
     ./applications/mpd.nix
+    ./applications/zsh.nix
     ./applications/theme.nix
     ./applications/mimeapps.nix
   ];

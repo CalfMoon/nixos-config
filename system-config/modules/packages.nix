@@ -10,7 +10,6 @@
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     gnupg
     papirus-icon-theme
-    atuin
     wl-clipboard
     meson
     ninja
