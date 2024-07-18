@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
-  imports = [ ./hardware-configuration.nix ./modules/packages.nix ./modules/display.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./modules/packages.nix
+    ./modules/display.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
