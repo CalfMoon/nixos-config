@@ -1,0 +1,9 @@
+@import "colors.rasi"
+window {
+    transparency:                   "real";
+    background-color:               @BG;
+    text-color:                     @FG;
+    border:                         4px;
+    border-color:                   @BDR;
+    border-radius:                  10px;
+  }
