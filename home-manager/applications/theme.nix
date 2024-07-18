@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   catppuccin = {
     accent = "green";
@@ -21,6 +21,7 @@
     font.size = 12;
     catppuccin.icon.enable = true;
     catppuccin.enable = true;
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   };
 
   programs = {
