@@ -3,7 +3,6 @@
   xdg.configFile."hypr/theme.conf".source = ./mocha.conf;
 
   home.packages = with pkgs; [
-    ctpv
     waypaper
     swww
     rofi-wayland
@@ -21,7 +20,7 @@
       "$accentAlpha" = "$greenAlpha";
 
       exec-once = [
-        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udikie & ${pkgs.hypridle}/bin/hypridle"
+        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udikie"
         "qbittorrent"
       ];
 
@@ -33,6 +32,7 @@
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "NIXOS_OZONE_WL,1"
         "NVD_BACKEND,direct"
+        "HYPRCURSOR_SIZE,24"
       ];
 
       input = {
@@ -125,7 +125,7 @@
 
         # most used applications
         "$mainMod, Return, exec, $TERMINAL"
-        "$mainMod SHIFT, Return, exec, $EDITOR"
+        "$mainMod SHIFT, Return, exec, $TERMINAL -e $EDITOR"
         "$mainMod CTRL, Return, exec, $BROWSER"
 
         # terminal based applications

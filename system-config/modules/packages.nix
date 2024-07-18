@@ -3,57 +3,57 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    #terminal utilities
     zip
     unzip
     unrar
     trash-cli
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     gnupg
-    papirus-icon-theme
     wl-clipboard
+    pulsemixer
+    calcurse
+    fastfetch
+
+    papirus-icon-theme
+
+    # build stuff
     meson
     ninja
     gcc
     cmake
     gnumake
-    rustup
 
+    #programming stuff
     vscodium
     neovim
     ripgrep
-    git
-    orca
     luajitPackages.luarocks
+    rustup
     python3
     nodejs_22
+    orca
 
-    ncmpcpp
-    btop
-    lf
-    eza
-    pulsemixer
-    pavucontrol
-    bat
-    calcurse
-    fastfetch
-
-    zathura
+    #general applications
     kitty
     brave
     libreoffice-fresh
     cinnamon.nemo
+    pavucontrol
     localsend
     borgbackup
     pika-backup
     galculator
-    loupe
     freetube
     obsidian
     obs-studio
     spotube
     qbittorrent
     gimp
+    qimgv
+    mpv
 
+    #gaming
     wine
     lutris
     gamescope

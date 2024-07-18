@@ -5,8 +5,7 @@
     FONT = "JetBrains Mono";
     TERMINAL = "kitty";
     TERM = "kitty";
-    EDITOR = "${config.home.sessionVariables.TERMINAL} -e nvim";
-    FILE_MANAGER = "${config.home.sessionVariables.TERMINAL} -e lf";
+    EDITOR = "nvim";
 
     ## Extra Paths
     PATH = "$PATH:$HOME/.local/bin/:$HOME/.local/share/scripts/:$HOME/.local/share/cargo/bin/:$HOME/.config/rofi/bin/";
@@ -21,6 +20,7 @@
     CUDA_CACHE_PATH = "${config.home.sessionVariables.XDG_CACHE_HOME}/nv";
     ICEAUTHORITY = "${config.home.sessionVariables.XDG_CACHE_HOME}/ICEauthority";
     NUGET_PACKAGES = "${config.home.sessionVariables.XDG_CACHE_HOME}/NuGetPackages";
+    XCOMPOSECACHE = "${config.home.sessionVariables.XDG_CACHE_HOME}/X11/xcompose";
 
     ELECTRUMDIR = "${config.home.sessionVariables.XDG_DATA_HOME}/electrum";
     GNUPGHOME = "${config.home.sessionVariables.XDG_DATA_HOME}/gnupg";
@@ -42,6 +42,7 @@
     MBSYNCRC = "${config.home.sessionVariables.XDG_CONFIG_HOME}/mbsync/config";
     NPM_CONFIG_USERCONFIG = "${config.home.sessionVariables.XDG_CONFIG_HOME}/npm/npmrc";
     ANDROID_SDK_HOME = "${config.home.sessionVariables.XDG_CONFIG_HOME}";
+    XCOMPOSEFILE = "${config.home.sessionVariables.XDG_CONFIG_HOME}/X11/xcompose";
     LESSHISTFILE = "-";
 
     PYTHON_HISTORY = "${config.home.sessionVariables.XDG_STATE_HOME}/python/history";

@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
@@ -15,9 +14,11 @@
 
     "text/rust" = [ "nvim.desktop" ];
 
-    "image/jpeg" = [ "org.gnome.Loupe.desktop" ];
-    "image/jpg" = [ "org.gnome.Loupe.desktop" ];
-    "image/png" = [ "org.gnome.Loupe.desktop" ];
+    "image/jpeg" = [ "qimgv.desktop" ];
+    "image/jpg" = [ "qimgv.desktop" ];
+    "image/png" = [ "qimgv.desktop" ];
+
+    "video/x-matroska" = [ "mpv.desktop" ];
 
     "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
   };
