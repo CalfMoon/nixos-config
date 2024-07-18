@@ -1,19 +1,19 @@
 { ... }:
 {
   imports = [
-    ./applications/lf.nix
-    ./applications/kitty.nix
-    ./applications/zathura.nix
-    ./applications/waybar.nix
-    ./applications/ncmpcpp.nix
-    ./applications/hyprland.nix
-    ./applications/enviroment-variable.nix
-    ./applications/git.nix
-    ./applications/dunst.nix
-    ./applications/mpd.nix
-    ./applications/zsh.nix
-    ./applications/theme.nix
-    ./applications/mimeapps.nix
+    ./modules/applications/lf.nix
+    ./modules/applications/kitty.nix
+    ./modules/applications/zathura.nix
+    ./modules/applications/waybar.nix
+    ./modules/applications/hyprland.nix
+    ./modules/applications/git.nix
+    ./modules/applications/dunst.nix
+    ./modules/applications/music.nix
+
+    ./modules/enviroment-variable.nix
+    ./modules/zsh.nix
+    ./modules/theme.nix
+    ./modules/mimeapps.nix
   ];
 
   home.username = "mooney";
