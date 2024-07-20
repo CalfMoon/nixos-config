@@ -46,7 +46,7 @@
         gap_size = 5;
         separator_color = "frame";
         sort = "yes";
-        font = "JetBrains Mono 10";
+        font = "Roboto 12";
         line_height = 0;
         alignment = "left";
         vertical_alignment = "center";

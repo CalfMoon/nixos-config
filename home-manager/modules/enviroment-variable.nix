@@ -2,7 +2,6 @@
   home.sessionVariables = {
     ## Applications
     BROWSER = "brave";
-    FONT = "JetBrains Mono";
     TERMINAL = "kitty";
     TERM = "kitty";
     EDITOR = "nvim";

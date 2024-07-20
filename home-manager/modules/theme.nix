@@ -5,8 +5,6 @@
     flavor = "mocha";
   };
 
-  catppuccin.pointerCursor.enable = true;
-
   qt = {
     enable = true;
     platformTheme.name = "kvantum";
@@ -15,9 +13,16 @@
     style.catppuccin.apply = false;
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    size = 24;
+  };
+  catppuccin.pointerCursor.enable = true;
+
   gtk = {
     enable = true;
-    font.name = "JetBrains Mono";
+    font.name = "Roboto";
     font.size = 12;
     catppuccin.enable = true;
     catppuccin.icon.enable = true;

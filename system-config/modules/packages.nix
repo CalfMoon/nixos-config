@@ -31,7 +31,7 @@
     luajitPackages.luarocks
     rustup
     python3
-    nodejs_22
+    nodePackages_latest.nodejs
     orca
 
     #general applications
@@ -63,5 +63,8 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
+    noto-fonts
+    roboto-serif
+    roboto
   ];
 }

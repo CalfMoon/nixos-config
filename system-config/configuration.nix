@@ -18,12 +18,22 @@
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver.xkb.layout = "us";
 
+
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 8384 22000 53317 6600 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 53317 6600 ];
   networking.firewall.enable = true;
+
+
+  fonts.fontconfig = {
+    defaultFonts = {
+      monospace = [ "JetBrains Mono" ];
+      serif = [ "Roboto Serif" ];
+      sansSerif = [ "Roboto" ];
+    };
+  };
 
   system.stateVersion = "24.05";
 }

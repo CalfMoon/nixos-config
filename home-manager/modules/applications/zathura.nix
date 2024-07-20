@@ -9,7 +9,6 @@
 
     options = {
       selection-clipboard = "clipboard";
-      font = "JetBrains Mono 10";
     };
   };
 }

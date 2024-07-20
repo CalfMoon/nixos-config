@@ -6,6 +6,8 @@
     waypaper
     swww
     rofi-wayland
+    grimblast
+    udiskie
   ];
 
   wayland.windowManager.hyprland = {
@@ -235,7 +237,7 @@
           text = ''cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"'';
           color = "$text";
           font_size = 25;
-          font_family = "JetBrains Mono";
+          font_family = "Roboto";
           position = "-30, -150";
           halign = "right";
           valign = "top";
@@ -245,7 +247,6 @@
           text = ''cmd[update:30000] echo "$(date +"%R")"'';
           color = "$text";
           font_size = 90;
-          font_family = "JetBrains Mono";
           position = "-30, 0";
           halign = "right";
           valign = "top";
@@ -286,7 +287,6 @@
       };
     };
   };
-
 
   services.hypridle = {
     enable = true;

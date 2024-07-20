@@ -7,12 +7,8 @@
 
         "include" = [ "~/.config/waybar/default-modules.json" ];
 
-        "modules-center" = [
-          "hyprland/workspaces"
-        ];
-        "modules-right" = [
-          "clock"
-        ];
+        "modules-center" = [ "hyprland/workspaces" ];
+        "modules-right" = [ "pulseaudio" "clock" ];
       }
       {
         "output" = "HDMI-A-1";
@@ -32,7 +28,7 @@
     style = ''
       * {
         border: none;
-        font-family: JetBrains Mono;
+        font-family: Roboto Serif;
         font-size: 15px;
       }
 

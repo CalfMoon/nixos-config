@@ -25,7 +25,9 @@
     accent = "green";
   };
 
-  console.catppuccin.enable = true;
+  console = {
+    catppuccin.enable = true;
+  };
 
   boot.loader.grub = {
     enable = true;
@@ -40,14 +42,12 @@
     package = pkgs.kdePackages.sddm;
     catppuccin = {
       enable = true;
-      font = "JetBrains Mono";
+      font = "Roboto";
       fontSize = "12";
     };
   };
 
-  services.hypridle.enable = true;
   programs = {
-    hyprlock.enable = true;
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;

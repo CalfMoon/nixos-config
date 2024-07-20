@@ -3,7 +3,7 @@
     enable = true;
     catppuccin.enable = true;
 
-    font.name = "JetBrains Mono";
+    font.name = "JetBrains Mono NL";
     font.size = 12;
 
     keybindings = {
