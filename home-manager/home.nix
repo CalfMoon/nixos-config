@@ -10,6 +10,7 @@
     ./modules/applications/dunst.nix
     ./modules/applications/music.nix
     ./modules/applications/rofi.nix
+    ./modules/applications/nvim-lsp.nix
 
     ./modules/enviroment-variable.nix
     ./modules/zsh.nix
