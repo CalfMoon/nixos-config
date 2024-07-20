@@ -28,6 +28,8 @@
     vscodium
     neovim
     ripgrep
+    gh
+
     luajitPackages.luarocks
     rustup
     python3

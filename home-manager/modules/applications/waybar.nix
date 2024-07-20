@@ -15,10 +15,7 @@
 
         "include" = [ "~/.config/waybar/default-modules.json" ];
 
-        "modules-left" = [
-          "mpd"
-          "tray"
-        ];
+        "modules-left" = [ "mpd" "tray" ];
 
         "modules-center" = [ "hyprland/workspaces" ];
         "modules-right" = [ "pulseaudio" "clock" ];

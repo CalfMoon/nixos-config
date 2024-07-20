@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ./modules/packages.nix
     ./modules/display.nix
+    ./modules/display-drivers.nix
     ./modules/kernel.nix
     ./modules/user.nix
     ./modules/services.nix

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   hardware.graphics = {
     enable = true;
@@ -6,19 +6,7 @@
   };
 
   services.xserver.enable = true;
-
   services.xserver.excludePackages = [ pkgs.xterm ];
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   catppuccin = {
     flavor = "mocha";
