@@ -7,7 +7,7 @@
     EDITOR = "nvim";
 
     ## Extra Paths
-    PATH = "$PATH:$HOME/.local/bin/:$HOME/.local/share/scripts/:$HOME/.local/share/cargo/bin/:$HOME/.config/rofi/bin/";
+    PATH = "$PATH:$HOME/.local/bin/:$HOME/.local/share/cargo/bin/:$HOME/.config/rofi/bin/";
 
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
@@ -45,6 +45,8 @@
     LESSHISTFILE = "-";
 
     PYTHON_HISTORY = "${config.home.sessionVariables.XDG_STATE_HOME}/python/history";
+
+    OLLAMA_MODELS = "$HOME/LLM/";
 
     N_PREFIX = "$HOME/.local/bin/n";
 

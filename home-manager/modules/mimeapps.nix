@@ -1,6 +1,7 @@
 { ... }: {
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
+    "inode/directory" = [ "lf.desktop" ];
     "text/plain" = [ "nvim.desktop" ];
     "text/markdown" = [ "nvim.desktop" ];
 

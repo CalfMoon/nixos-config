@@ -7,8 +7,8 @@
     font.size = 12;
 
     keybindings = {
-      "ctrl+minus" = "change_font_size all -2.0";
-      "ctrl+equal" = "change_font_size all +2.0";
+      "ctrl+minus" = "change_font_size all -1.0";
+      "ctrl+equal" = "change_font_size all +1.0";
     };
 
     settings = {

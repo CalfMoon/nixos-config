@@ -11,6 +11,7 @@
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     gnupg
     wl-clipboard
+    xclip
     pulsemixer
     calcurse
     fastfetch
@@ -23,12 +24,11 @@
     gcc
     cmake
     gnumake
+    go
 
     #programming stuff
     vscodium
     neovim
-    ripgrep
-    gh
 
     luajitPackages.luarocks
     rustup
@@ -39,6 +39,7 @@
     #general applications
     kitty
     brave
+    tor-browser
     libreoffice-fresh
     cinnamon.nemo
     pavucontrol
@@ -48,12 +49,10 @@
     galculator
     freetube
     obsidian
-    obs-studio
     spotube
     qbittorrent
     gimp
     qimgv
-    mpv
 
     #gaming
     wine

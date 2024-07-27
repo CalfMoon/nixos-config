@@ -3,13 +3,14 @@ rofi_command="rofi -theme $HOME/.config/rofi/config/powermenu.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-shutdown=""
-reboot=""
 lock=""
-suspend="󰤄"
 logout="󰍃"
+suspend="󰤄"
+hibernate="󰤁"
+reboot=""
+shutdown=""
 
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+options="$lock\n$logout\n$suspend\n$hibernate\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
 case $chosen in
@@ -19,12 +20,13 @@ $shutdown)
 $reboot)
   systemctl reboot
   ;;
+$hibernate)
+  systemctl hibernate
+  ;;
 $lock)
   loginctl lock-session
   ;;
 $suspend)
-  mpc -q pause
-  loginctl lock-session
   systemctl suspend
   ;;
 $logout)

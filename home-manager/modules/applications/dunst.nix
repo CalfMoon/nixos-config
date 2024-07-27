@@ -6,23 +6,12 @@
     iconTheme.name = "Papirus";
 
     settings = {
-      urgency_low = {
-        background = "#1E1E2E";
-        foreground = "#CDD6F4";
-      };
-      urgency_normal = {
-        background = "#1E1E2E";
-        foreground = "#CDD6F4";
-      };
-
       urgency_critical = {
-        background = "#1E1E2E";
-        foreground = "#CDD6F4";
         frame_color = "#FAB387";
       };
 
       global = {
-        monitor = 1;
+        follow = "keyboard";
         width = 300;
         height = 300;
         origin = "top-right";
@@ -43,6 +32,8 @@
         text_icon_padding = 0;
         frame_width = 3;
         frame_color = "#a6e3a1";
+        background = "#1E1E2E";
+        foreground = "#CDD6F4";
         gap_size = 5;
         separator_color = "frame";
         sort = "yes";

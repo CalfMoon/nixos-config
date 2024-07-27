@@ -1,4 +1,6 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
+  home.packages = [ pkgs.libnotify ];
   programs.zsh = {
     enable = true;
     syntaxHighlighting = {
@@ -11,7 +13,8 @@
 
     shellAliases = {
       ls = "${pkgs.eza}/bin/exa -al --color=always --group-directories-first";
-      cat = "${pkgs.bat}/bat";
+      cat = "${pkgs.bat}/bin/bat";
+      nix-shell = "nix-shell --run zsh";
       e = "$EDITOR";
 
       ".." = "cd ..";
@@ -21,6 +24,15 @@
       config = "git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME";
       capSwap = "setxkbmap -option 'ctrl:swapcaps'";
     };
+    plugins = [{
+      name = "auto-notify";
+      src = pkgs.fetchFromGitHub {
+        owner = "MichaelAquilina";
+        repo = "zsh-auto-notify";
+        rev = "0.10.1";
+        sha256 = "sha256-l5nXzCC7MT3hxRQPZv1RFalXZm7uKABZtfEZSMdVmro=";
+      };
+    }];
   };
 
   programs.atuin = {

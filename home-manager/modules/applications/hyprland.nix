@@ -6,8 +6,6 @@
     waypaper
     swww
     rofi-wayland
-    grimblast
-    udiskie
   ];
 
   wayland.windowManager.hyprland = {
@@ -22,7 +20,7 @@
       "$accentAlpha" = "$greenAlpha";
 
       exec-once = [
-        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udikie"
+        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udiskie"
         "qbittorrent"
       ];
 
@@ -34,21 +32,16 @@
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "NIXOS_OZONE_WL,1"
         "NVD_BACKEND,direct"
-        "HYPRCURSOR_SIZE,24"
       ];
 
       input = {
         kb_layout = "us";
-
-        follow_mouse = 0;
-
         kb_options = "ctrl:swapcaps";
-
+        follow_mouse = 0;
+        sensitivity = 0;
         touchpad = {
           natural_scroll = "no";
         };
-
-        sensitivity = 0;
       };
 
       general = {
@@ -83,11 +76,11 @@
         enabled = true;
         bezier = "myBezier, 0, 0, 0, 0";
         animation = [
-          "windows, 1, 3, myBezier, slide"
-          "windowsOut, 1, 3, myBezier, popin 20%"
-          "fade, 1, 3, myBezier"
-          "workspaces, 1, 3, myBezier"
-          "specialWorkspace, 1, 3, myBezier, slidevert"
+          "windows, 1, 2, myBezier, slide"
+          "windowsOut, 1, 2, myBezier, slide"
+          "fade, 1, 2, myBezier"
+          "workspaces, 1, 2, myBezier"
+          "specialWorkspace, 1, 2, myBezier, slidevert"
         ];
       };
 
@@ -142,8 +135,8 @@
 
         #screenshot
         "$mainMod, S, exec, ${pkgs.grimblast}/bin/grimblast copy output"
+        "ALT, S, exec, ${pkgs.grimblast}/bin/grimblast copy area"
         "$mainMod ALT, S, exec, ${pkgs.grimblast}/bin/grimblast copy screen"
-        "$mainMod SHIFT, S, exec, ${pkgs.grimblast}/bin/grimblast copy area"
 
         #volume control
         "$mainMod, bracketleft, exec, ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
@@ -191,20 +184,11 @@
       ]
       ++ (
         builtins.concatLists (builtins.genList
-          (
-            x:
-            let
-              ws =
-                let
-                  c = (x + 1) / 10;
-                in
-                builtins.toString (x + 1 - (c * 10));
-            in
-            [
+          (x:
+            let ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10)); in [
               "$mainMod, ${ws}, split-workspace, ${toString (x + 1)}"
               "$mainMod SHIFT, ${ws}, split-movetoworkspacesilent, ${toString (x + 1)}"
-            ]
-          )
+            ])
           10)
       );
 
@@ -305,7 +289,7 @@
         }
         {
           timeout = 420;
-          on-timeout = "loginctl lock-session";
+          on-timeout = "${pkgs.mpc-cli}/bin/mpc -q pause & loginctl lock-session";
         }
         {
           timeout = 900;

@@ -4,6 +4,7 @@
     lua-language-server
     bash-language-server
     nil
+    typescript
     typescript-language-server
     vscode-langservers-extracted
     emmet-ls
@@ -19,5 +20,6 @@
     rustfmt
 
     ripgrep
+    gh
   ];
 }

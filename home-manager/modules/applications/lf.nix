@@ -445,5 +445,4 @@
     # other formats
     *.pdf   
   '';
-
 }

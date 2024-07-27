@@ -23,6 +23,7 @@
       }
     '';
   };
+
   programs.ncmpcpp = {
     enable = true;
     bindings = [
@@ -169,8 +170,9 @@
       mpd_port = "6600";
 
       lyrics_directory = "~/.cache/ncmpcpp/lyrics";
-      lyrics_fetchers = "genius, tekstowo, justsomelyrics, zeneszoveg, internet";
+      lyrics_fetchers = "tekstowo, justsomelyrics, zeneszoveg, internet, genius";
 
     };
+
   };
 }

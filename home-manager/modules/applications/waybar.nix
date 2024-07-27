@@ -25,7 +25,7 @@
     style = ''
       * {
         border: none;
-        font-family: Roboto Serif;
+        font-family: JetBrains Mono NL;
         font-size: 15px;
       }
 
