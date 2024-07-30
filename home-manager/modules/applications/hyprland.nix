@@ -21,7 +21,7 @@
 
       exec-once = [
         "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udiskie"
-        "qbittorrent"
+        "${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       env = [
@@ -36,7 +36,7 @@
 
       input = {
         kb_layout = "us";
-        kb_options = "ctrl:swapcaps";
+        kb_options = "ctrl:nocaps";
         follow_mouse = 0;
         sensitivity = 0;
         touchpad = {

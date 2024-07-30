@@ -33,6 +33,7 @@
     CARGO_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/cargo";
     JAVA_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/java";
     RUSTUP_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/rustup";
+    XCURSOR_PATH = "${config.home.sessionVariables.XDG_DATA_HOME}/icons";
 
     NOTMUCH_CONFIG = "${config.home.sessionVariables.XDG_CONFIG_HOME}/notmuch-config";
     _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.home.sessionVariables.XDG_CONFIG_HOME}/java";

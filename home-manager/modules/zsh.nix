@@ -22,7 +22,7 @@
       "...." = "cd ../../..";
 
       config = "git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME";
-      capSwap = "setxkbmap -option 'ctrl:swapcaps'";
+      capSwap = "setxkbmap -option 'ctrl:nocaps'";
     };
     plugins = [{
       name = "auto-notify";

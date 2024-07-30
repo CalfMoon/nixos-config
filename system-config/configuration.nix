@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -15,19 +15,43 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+
   time.timeZone = "Asia/Kathmandu";
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver.xkb.layout = "us";
 
-  virtualisation.docker.enable = true;
-  users.extraGroups.docker.members = [ "mooney" ];
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "mooney" ];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation = {
+    docker = {
+      enable = true;
+      package = pkgs.docker_27;
+    };
+  };
+  users.users.mooney.extraGroups = [ "docker" ];
+
+
+  environment.systemPackages = with pkgs; [ qemu lxqt.lxqt-policykit ];
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 8384 22000 53317 6600 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 53317 6600 ];
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
 
 
   fonts.fontconfig = {

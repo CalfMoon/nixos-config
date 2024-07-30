@@ -9,7 +9,6 @@
     unrar
     trash-cli
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
-    gnupg
     wl-clipboard
     xclip
     pulsemixer
@@ -39,7 +38,6 @@
     #general applications
     kitty
     brave
-    tor-browser
     libreoffice-fresh
     cinnamon.nemo
     pavucontrol
@@ -50,6 +48,7 @@
     freetube
     obsidian
     spotube
+    element-desktop
     qbittorrent
     gimp
     qimgv
