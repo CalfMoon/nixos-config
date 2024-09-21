@@ -54,6 +54,12 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/mooney/LLM" =
+    {
+      device = "/dev/disk/by-uuid/60d29149-7536-404e-b31c-d194582a81f0";
+      fsType = "ext4";
+    };
+
   swapDevices = [{ device = "/dev/disk/by-uuid/00753600-bf98-44c1-b90a-73e38798bfb8"; }];
   boot.kernelParams = [ "resume=UUID=00753600-bf98-44c1-b90a-73e38798bfb8" ];
   boot.resumeDevice = "/dev/disk/by-uuid/00753600-bf98-44c1-b90a-73e38798bfb8";

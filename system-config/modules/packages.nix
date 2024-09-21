@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     #terminal utilities
     zip
@@ -21,6 +19,7 @@
     meson
     ninja
     gcc
+    deno
     cmake
     gnumake
     go
@@ -39,7 +38,7 @@
     kitty
     brave
     libreoffice-fresh
-    cinnamon.nemo
+    nemo
     pavucontrol
     localsend
     borgbackup
@@ -52,6 +51,7 @@
     qbittorrent
     gimp
     qimgv
+    gpt4all
 
     #gaming
     wine

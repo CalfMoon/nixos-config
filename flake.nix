@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=a0be3de0e89f42b98d00bf0d87ad10af843d58d6";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";

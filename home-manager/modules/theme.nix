@@ -38,6 +38,12 @@
     btop = {
       enable = true;
       catppuccin.enable = true;
+      settings = {
+        vim_keys = true;
+        update_ms = 1000;
+        proc_tree = true;
+
+      };
     };
   };
 }
