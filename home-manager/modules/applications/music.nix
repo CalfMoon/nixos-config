@@ -4,6 +4,9 @@
     musicDirectory = /home/mooney/Music;
     playlistDirectory = /home/mooney/Music/.playlist;
 
+    network.listenAddress = "any";
+    network.startWhenNeeded = true;
+
     extraConfig = ''
       auto_update "yes"
       restore_paused "yes"
@@ -166,7 +169,7 @@
       empty_tag_marker = "";
 
       # host
-      mpd_host = "@localhost";
+      mpd_host = "localhost";
       mpd_port = "6600";
 
       lyrics_directory = "~/.cache/ncmpcpp/lyrics";

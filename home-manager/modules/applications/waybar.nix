@@ -7,6 +7,7 @@
 
         "include" = [ "~/.config/waybar/default-modules.json" ];
 
+        "modules-left" = [ "mpd" ];
         "modules-center" = [ "hyprland/workspaces" ];
         "modules-right" = [ "pulseaudio" "clock" ];
       }
@@ -16,7 +17,6 @@
         "include" = [ "~/.config/waybar/default-modules.json" ];
 
         "modules-left" = [ "mpd" "tray" ];
-
         "modules-center" = [ "hyprland/workspaces" ];
         "modules-right" = [ "pulseaudio" "clock" ];
       }
