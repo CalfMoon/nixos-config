@@ -184,10 +184,6 @@
         # special workspace bindings
         "$mainMod, A, togglespecialworkspace, magic"
         "$mainMod SHIFT, A, movetoworkspacesilent, special:magic"
-
-        "$mainMod ALT, l, split-changemonitor, next"
-        "$mainMod ALT, h, split-changemonitor, prev"
-
       ]
       ++ (
         builtins.concatLists (builtins.genList
