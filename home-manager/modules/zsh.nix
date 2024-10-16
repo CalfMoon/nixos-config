@@ -15,7 +15,7 @@
       ls = "${pkgs.eza}/bin/exa -al --color=always --group-directories-first";
       cat = "${pkgs.bat}/bin/bat";
       nix-shell = "nix-shell --run zsh";
-      e = "$EDITOR";
+      e = "$EDITOR .";
 
       ".." = "cd ..";
       "..." = "cd ../..";

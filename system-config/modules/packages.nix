@@ -29,8 +29,9 @@
     neovim
 
     luajitPackages.luarocks
-    rustup
+    cargo
     python3
+    pipx
     nodePackages_latest.nodejs
     orca
 
@@ -51,7 +52,6 @@
     qbittorrent
     gimp
     qimgv
-    gpt4all
 
     #gaming
     wine
