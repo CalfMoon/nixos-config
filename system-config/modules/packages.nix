@@ -29,7 +29,7 @@
     neovim
 
     luajitPackages.luarocks
-    cargo
+    rustup
     python3
     pipx
     nodePackages_latest.nodejs
