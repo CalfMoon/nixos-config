@@ -13,6 +13,8 @@
     calcurse
     fastfetch
 
+    tailscale
+
     papirus-icon-theme
 
     # build stuff
@@ -38,7 +40,7 @@
     #general applications
     kitty
     brave
-    libreoffice-fresh
+    libreoffice
     nemo
     pavucontrol
     localsend
@@ -48,7 +50,6 @@
     freetube
     obsidian
     spotube
-    element-desktop
     qbittorrent
     gimp
     qimgv
@@ -59,6 +60,7 @@
     gamescope
     steam
     protonup-qt
+    ryujinx
   ];
 
   fonts.packages = with pkgs; [
