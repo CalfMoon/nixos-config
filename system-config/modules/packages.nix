@@ -49,10 +49,13 @@
     galculator
     freetube
     obsidian
-    spotube
+    nur.repos.nltch.spotify-adblock #for installing spotify-adblock
+    nur.repos.nltch.ciscoPacketTracer8 #for installing packettracer8
     qbittorrent
     gimp
     qimgv
+    sqlite
+    sqlitestudio
 
     #gaming
     wine

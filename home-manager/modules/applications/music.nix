@@ -122,7 +122,7 @@
       ## Alternative Interface ##
       user_interface = "alternative";
       alternative_header_first_line_format = "$0$aqqu$/a {$6%a$9 - }{$3%t$9}|{$3%f$9} $0$atqq$/a$9";
-      alternative_header_second_line_format = "{$4%D$9}";
+      alternative_header_second_line_format = "{$4%b {- %y}$9}";
 
       ## Classic Interface ##
       song_status_format = " $6%a $7⟫⟫ $3%t $7⟫⟫ $4%b ";
