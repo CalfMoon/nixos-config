@@ -1,7 +1,6 @@
 { ... }: {
   programs.zathura = {
     enable = true;
-    catppuccin.enable = true;
 
     mappings = {
       "<C-i>" = "recolor";
@@ -11,4 +10,5 @@
       selection-clipboard = "clipboard";
     };
   };
+  catppuccin.zathura.enable = true;
 }

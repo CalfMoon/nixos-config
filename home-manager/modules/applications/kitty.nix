@@ -1,7 +1,6 @@
 { ... }: {
   programs.kitty = {
     enable = true;
-    catppuccin.enable = true;
 
     font.name = "JetBrains Mono NL";
     font.size = 12;
@@ -23,4 +22,6 @@
       placement_strategy = "center";
     };
   };
+
+  catppuccin.kitty.enable = true;
 }

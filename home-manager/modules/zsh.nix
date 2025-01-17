@@ -5,7 +5,6 @@
     enable = true;
     syntaxHighlighting = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     history.size = 0;
@@ -34,6 +33,7 @@
       };
     }];
   };
+  catppuccin.zsh-syntax-highlighting.enable = true;
 
   programs.atuin = {
     enable = true;
@@ -43,7 +43,6 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    catppuccin.enable = true;
     settings = {
       add_newline = false;
 
@@ -55,4 +54,6 @@
       ];
     };
   };
+
+  catppuccin.starship.enable = true;
 }

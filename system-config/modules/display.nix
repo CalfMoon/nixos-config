@@ -11,10 +11,13 @@
   catppuccin = {
     flavor = "mocha";
     accent = "green";
-  };
-
-  console = {
-    catppuccin.enable = true;
+    tty.enable = true;
+    grub.enable = true;
+    sddm = {
+      enable = true;
+      font = "Roboto";
+      fontSize = "12";
+    };
   };
 
   boot.loader.grub = {
@@ -22,18 +25,12 @@
     device = "/dev/sda";
     useOSProber = true;
     gfxmodeEfi = "1920x1080";
-    catppuccin.enable = true;
   };
 
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     package = pkgs.kdePackages.sddm;
-    catppuccin = {
-      enable = true;
-      font = "Roboto";
-      fontSize = "12";
-    };
   };
 
   nix.settings = {
