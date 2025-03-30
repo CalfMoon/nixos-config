@@ -46,24 +46,25 @@
     localsend
     borgbackup
     pika-backup
+    gparted
     galculator
-    freetube
     obsidian
-    nur.repos.nltch.spotify-adblock #for installing spotify-adblock
-    nur.repos.nltch.ciscoPacketTracer8 #for installing packettracer8
+    nur.repos.nltch.spotify-adblock
     qbittorrent
+    nicotine-plus
     gimp
     qimgv
     sqlite
     sqlitestudio
+    plattenalbum
 
     #gaming
     wine
     lutris
-    gamescope
     steam
     protonup-qt
     ryujinx
+    libgudev
   ];
 
   fonts.packages = with pkgs; [

@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   services.mpd = {
     enable = true;
     musicDirectory = /home/mooney/Music;
@@ -127,6 +127,9 @@
       ## Classic Interface ##
       song_status_format = " $6%a $7⟫⟫ $3%t $7⟫⟫ $4%b ";
 
+      ## Display Album artist insted of artist ##
+      media_library_primary_tag = "album_artist";
+
       ## Visualizer ##
       visualizer_data_source = "/tmp/mpd.fifo";
       visualizer_output_name = "my_fifo";
@@ -173,9 +176,22 @@
       mpd_port = "6600";
 
       lyrics_directory = "~/.cache/ncmpcpp/lyrics";
-      lyrics_fetchers = "tekstowo, justsomelyrics, zeneszoveg, internet, genius";
+      lyrics_fetchers = "genius, tekstowo, justsomelyrics, zeneszoveg, internet";
 
     };
 
   };
+
+  programs.beets = {
+    enable = true;
+    settings = {
+      original_date = "yes";
+      plugins = [ "lastgenre" "web" ];
+      lastgenre = {
+        source = "album";
+        count = 3;
+      };
+    };
+  };
+
 }

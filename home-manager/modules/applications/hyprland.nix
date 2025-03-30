@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }:
 {
   xdg.configFile."hypr/theme.conf".source = ./mocha.conf;
+  wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
   home.packages = with pkgs; [
     waypaper

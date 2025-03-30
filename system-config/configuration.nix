@@ -10,7 +10,11 @@
     ./modules/services.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    cores = 4;
+    max-jobs = 1;
+  };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;

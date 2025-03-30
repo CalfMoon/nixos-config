@@ -13,9 +13,9 @@
       global = {
         follow = "keyboard";
         width = 300;
-        height = 300;
+        height = "(0,300)";
         origin = "top-right";
-        offset = "6x6";
+        offset = "(6,6)";
         scale = 0;
         notification_limit = 2;
         progress_bar = true;

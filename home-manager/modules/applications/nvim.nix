@@ -1,24 +1,14 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # lsp
     lua-language-server
-    bash-language-server
-    nil
-    typescript
-    typescript-language-server
-    vscode-langservers-extracted
-    emmet-ls
-    pyright
 
+    # formatter
     stylua
-    shfmt
-    nixpkgs-fmt
-    nodePackages_latest.prettier
-    rubyPackages.htmlbeautifier
-    black
-    rustfmt
 
-    clippy
+    # debugger
+    vscode-extensions.vadimcn.vscode-lldb.adapter
 
     ripgrep
     gh
