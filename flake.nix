@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,18 +14,17 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, nur, ... } @inputs: {
+  outputs = { nixpkgs, home-manager, spicetify-nix, catppuccin, ... } @inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
 
       modules = [
         ./system-config/configuration.nix
-
-        nur.modules.nixos.default
-        nur.legacyPackages.x86_64-linux.repos.iopq.modules.xraya
 
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
@@ -37,7 +32,8 @@
           home-manager = {
             users.mooney.imports = [
               ./home-manager/home.nix
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
+              spicetify-nix.homeManagerModules.spicetify
             ];
 
             extraSpecialArgs = { inherit inputs; };

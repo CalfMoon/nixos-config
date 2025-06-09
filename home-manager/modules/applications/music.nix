@@ -186,11 +186,12 @@
     enable = true;
     settings = {
       original_date = "yes";
-      plugins = [ "lastgenre" "web" ];
+      plugins = [ "lastgenre" "web" "advancedrewrite" ];
       lastgenre = {
         source = "album";
         count = 3;
       };
+      advancedrewrite = [ {"albumartist Ye"= "Kanye";} ];
     };
   };
 

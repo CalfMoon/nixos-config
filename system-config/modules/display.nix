@@ -20,10 +20,14 @@
     };
   };
 
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.grub = {
     enable = true;
-    device = "/dev/sda";
+    device = "nodev";
     useOSProber = true;
+    efiSupport = true;
     gfxmodeEfi = "1920x1080";
   };
 

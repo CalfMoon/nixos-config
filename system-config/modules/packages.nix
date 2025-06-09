@@ -33,6 +33,7 @@
     luajitPackages.luarocks
     rustup
     python3
+    jdk
     pipx
     nodePackages_latest.nodejs
     orca
@@ -49,7 +50,6 @@
     gparted
     galculator
     obsidian
-    nur.repos.nltch.spotify-adblock
     qbittorrent
     nicotine-plus
     gimp
@@ -61,6 +61,7 @@
     #gaming
     wine
     lutris
+    prismlauncher
     steam
     protonup-qt
     ryujinx

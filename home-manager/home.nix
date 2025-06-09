@@ -13,6 +13,7 @@
     ./modules/applications/nvim.nix
     ./modules/applications/obs.nix
     ./modules/applications/rofi.nix
+    ./modules/applications/spotify.nix
     ./modules/applications/zathura.nix
     ./modules/applications/waybar.nix
 
@@ -27,6 +28,7 @@
 
   services.syncthing.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";
 }
