@@ -57,6 +57,7 @@
     sqlite
     sqlitestudio
     plattenalbum
+    mangayomi
 
     #gaming
     wine
@@ -64,7 +65,7 @@
     prismlauncher
     steam
     protonup-qt
-    ryujinx
+    ryubing
     libgudev
   ];
 

@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 {
   catppuccin = {
     accent = "green";
@@ -26,8 +26,15 @@
     font.name = "Roboto";
     font.size = 12;
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    theme = {
+      name = "Catppuccin-GTK-Green-Dark";
+      package = pkgs.magnetic-catppuccin-gtk.override {
+        accent = ["green"];
+        size = "standard";
+        tweaks = [ "black" ];
+      };
+    };
   };
 
-  catppuccin.gtk.enable = true;
   catppuccin.gtk.icon.enable = true;
 }

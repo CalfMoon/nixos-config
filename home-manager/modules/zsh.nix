@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 {
   home.packages = [ pkgs.libnotify ];
   programs.zsh = {
@@ -8,7 +8,7 @@
     };
 
     history.size = 0;
-    dotDir = ".config/zsh/";
+    dotDir = config.xdg.configHome + "/zsh"; 
 
     shellAliases = {
       ls = "${pkgs.eza}/bin/exa -al --color=always --group-directories-first";

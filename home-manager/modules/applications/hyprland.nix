@@ -21,9 +21,8 @@
       "$accentAlpha" = "$greenAlpha";
 
       exec-once = [
-        "${pkgs.swww}/bin/swww-daemon --format xrgb & ${pkgs.waypaper}/bin/waypaper --restore"
-        "${pkgs.waybar}/bin/waybar & ${pkgs.udiskie}/bin/udiskie"
-        "${pkgs.qbittorrent}/bin/qbittorrent"
+        "${pkgs.swww}/bin/swww-daemon --format xrgb"
+        "${pkgs.waybar}/bin/waybar && ${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       env = [

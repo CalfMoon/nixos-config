@@ -28,6 +28,11 @@
 
   services.syncthing.enable = true;
 
+  services.udiskie = {
+    enable = true;
+    notify = false;
+  };
+
   nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";
