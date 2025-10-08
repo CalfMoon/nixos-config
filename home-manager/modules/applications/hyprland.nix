@@ -1,12 +1,10 @@
-{ pkgs, inputs, ... }:
-{
+{ pkgs, inputs, ... }: {
   xdg.configFile."hypr/theme.conf".source = ./mocha.conf;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
   home.packages = with pkgs; [
     waypaper
     swww
-    rofi-wayland
   ];
 
   wayland.windowManager.hyprland = {
@@ -22,7 +20,8 @@
 
       exec-once = [
         "${pkgs.swww}/bin/swww-daemon --format xrgb"
-        "${pkgs.waybar}/bin/waybar && ${pkgs.qbittorrent}/bin/qbittorrent"
+        "${pkgs.waybar}/bin/waybar"
+        "${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       env = [
@@ -38,7 +37,7 @@
       input = {
         kb_layout = "us";
         kb_options = "ctrl:nocaps";
-        follow_mouse = 0;
+        follow_mouse = true;
         sensitivity = 0;
         touchpad = {
           natural_scroll = "no";

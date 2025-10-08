@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # lsp
     lua-language-server
+    rustup
 
     # formatter
     stylua

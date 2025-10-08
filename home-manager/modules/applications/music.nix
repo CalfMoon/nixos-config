@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [
+    opusTools
+  ];
+
   services.mpd = {
     enable = true;
     musicDirectory = /home/mooney/Music;
@@ -186,11 +190,16 @@
     enable = true;
     settings = {
       original_date = "yes";
-      plugins = [ "lastgenre" "web" "advancedrewrite" ];
+      plugins = [ "lastgenre" "web" "advancedrewrite" "fetchart" "embedart" ];
       lastgenre = {
         source = "album";
+        separator = "; ";
         count = 3;
       };
+      fetchart = {
+        auto = false;
+      };
+      embedart.remove_art_file = true;
       advancedrewrite = [ {"albumartist Ye"= "Kanye";} ];
     };
   };
