@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     opusTools
+    mpc
   ];
 
   services.mpd = {
@@ -94,6 +95,7 @@
       }
     ];
     settings = {
+      execute_on_song_change = "ncmpcpp-notify";
       autocenter_mode = "yes";
       follow_now_playing_lyrics = "yes";
       ignore_leading_the = "yes";
@@ -190,17 +192,21 @@
     enable = true;
     settings = {
       original_date = "yes";
-      plugins = [ "lastgenre" "web" "advancedrewrite" "fetchart" "embedart" ];
+      import.move = true;
+
+      plugins = [ "musicbrainz" "lastgenre" "advancedrewrite" "fetchart" "embedart" ];
       lastgenre = {
         source = "album";
         separator = "; ";
         count = 3;
+        force = true;
       };
       fetchart = {
-        auto = false;
+        auto = true;
+        cover_format = "jpeg";
       };
-      embedart.remove_art_file = true;
-      advancedrewrite = [ {"albumartist Ye"= "Kanye";} ];
+      embedart.auto = true;
+      advancedrewrite = [ {"albumartist Ye" = "Kanye";} ];
     };
   };
 

@@ -148,9 +148,9 @@
         "$mainMod, backslash, exec, ${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
         #music control
-        "$mainMod SHIFT, bracketleft, exec, ${pkgs.mpc-cli}/bin/mpc prev"
-        "$mainMod SHIFT, bracketright, exec, ${pkgs.mpc-cli}/bin/mpc next"
-        "$mainMod SHIFT, backslash, exec, ${pkgs.mpc-cli}/bin/mpc toggle"
+        "$mainMod SHIFT, bracketleft, exec, ${pkgs.mpc}/bin/mpc prev"
+        "$mainMod SHIFT, bracketright, exec, ${pkgs.mpc}/bin/mpc next"
+        "$mainMod SHIFT, backslash, exec, ${pkgs.mpc}/bin/mpc toggle"
 
         #toggle window types
         "$mainMod SHIFT, space, togglefloating"
@@ -289,7 +289,7 @@
         }
         {
           timeout = 420;
-          on-timeout = "${pkgs.mpc-cli}/bin/mpc -q pause & loginctl lock-session";
+          on-timeout = "${pkgs.mpc}/bin/mpc -q pause & loginctl lock-session";
         }
         {
           timeout = 900;

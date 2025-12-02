@@ -7,7 +7,7 @@
     EDITOR = "nvim";
 
     ## Extra Paths
-    PATH = "$PATH:$HOME/.local/bin/:$HOME/.local/share/cargo/bin/:$HOME/.config/rofi/bin/";
+    PATH = "$PATH:$HOME/.local/bin/:$HOME/.local/share/script/:$HOME/.local/share/cargo/bin/:$HOME/.config/rofi/bin/";
 
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";

@@ -19,6 +19,9 @@
     "image/jpg" = [ "qimgv.desktop" ];
     "image/png" = [ "qimgv.desktop" ];
 
+    "audio/mpeg" = [ "mpv.desktop" ];
+    "audio/x-opus+ogg" = [ "mpv.desktop" ];
+
     "video/x-matroska" = [ "mpv.desktop" ];
 
     "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];

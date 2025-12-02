@@ -74,5 +74,6 @@
     noto-fonts
     roboto-serif
     roboto
+    font-awesome
   ];
 }

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+readonly MUSIC_DIR="${HOME}/Music/"
+readonly SONG_PATH="$(mpc --format '%file%' current)"
+readonly SONG_DIR="$(dirname "${SONG_PATH}")"
+readonly ALBUM_ART_PATH="${MUSIC_DIR}/${SONG_DIR}/cover.jpg"
+
+notify-send -i "${ALBUM_ART_PATH}" "$(mpc --format '%title%' current)" "$(mpc --format '%artist% - %album%' current)"

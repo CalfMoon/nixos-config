@@ -19,6 +19,7 @@
 
     ./modules/enviroment-variable.nix
     ./modules/zsh.nix
+    ./modules/scripts.nix
     ./modules/theme.nix
     ./modules/mimeapps.nix
   ];

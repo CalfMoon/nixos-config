@@ -101,19 +101,20 @@
         }
       },
       "mpd": {
-        "format": "{stateIcon} {artist} - {title} 󰝚",
-        "format-disconnected": "Disconnected 󰝚",
-        "format-stopped": "Stopped 󰝚",
+        "format": "{stateIcon} {albumArtist} - {title} ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "Stopped ",
         "unknown-tag": "N/A",
         "interval": 1,
         "state-icons": {
           "paused": "",
-          "playing": "󰏤",
+          "playing": "",
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)",
-        "on-click": "${pkgs.mpc-cli}/bin/mpc toggle",
+        "on-click": "${pkgs.mpc}/bin/mpc toggle",
         "on-click-right": "$TERMINAL -e ${pkgs.ncmpcpp}/bin/ncmpcpp",
+        "max-length": 50,
       },
       "clock": {
         "tooltip-format": "{:%Y %B}",
@@ -124,9 +125,9 @@
       "pulseaudio": {
         "scroll-step": 1,
         "format": "{volume}% {icon}",
-        "format-muted": "{volume}% 󰓄",
+        "format-muted": "{volume}% ",
         "format-icons": {
-          "default": ["󰓃"],
+          "default": [""],
         },
         "on-click": "${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "$TERMINAL -e ${pkgs.pulsemixer}/bin/pulsemixer",

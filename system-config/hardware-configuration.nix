@@ -26,7 +26,7 @@
 
   fileSystems."/home" =
     {
-      device = "/dev/disk/by-uuid/14ddb20f-48a0-4595-bbb7-e44576558746";
+      device = "/dev/disk/by-uuid/919823e4-7b36-4880-b8b0-dace12248031";
       fsType = "ext4";
     };
 
@@ -42,21 +42,9 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/mooney/VMs" =
-    {
-      device = "/dev/disk/by-uuid/ed295177-c3af-444f-b60e-4c4fe1bff1db";
-      fsType = "ext4";
-    };
-
   fileSystems."/home/mooney/Backups" =
     {
       device = "/dev/disk/by-uuid/04154651-0543-4d13-8b0e-cf423eede4f6";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home/mooney/LLM" =
-    {
-      device = "/dev/disk/by-uuid/60d29149-7536-404e-b31c-d194582a81f0";
       fsType = "ext4";
     };
 

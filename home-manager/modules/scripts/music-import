@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for flacfile in "$1/*.flac" "$1/**/*.flac"; do
+  opusenc --bitrate 192 "$flacfile" "${flacfile%.flac}.opus"
+  rm "$flacfile"
+done
+
+beet import $1
