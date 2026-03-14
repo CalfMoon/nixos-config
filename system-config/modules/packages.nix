@@ -9,7 +9,6 @@
     (pass.withExtensions (ext: with ext; [ pass-otp ]))
     wl-clipboard
     xclip
-    pulsemixer
     calcurse
     fastfetch
 
@@ -31,6 +30,7 @@
     neovim
 
     luajitPackages.luarocks
+    wget
     rustup
     python3
     jdk
@@ -39,16 +39,14 @@
     orca
 
     #general applications
-    kitty
     brave
     libreoffice
-    nemo
+    nautilus
     pavucontrol
     localsend
     borgbackup
     pika-backup
     gparted
-    galculator
     obsidian
     qbittorrent
     nicotine-plus
@@ -57,11 +55,12 @@
     sqlite
     sqlitestudio
     plattenalbum
-    mangayomi
 
     #gaming
     wine
     lutris
+    heroic
+    appimage-run
     prismlauncher
     steam
     protonup-qt

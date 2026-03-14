@@ -25,5 +25,7 @@
     "video/x-matroska" = [ "mpv.desktop" ];
 
     "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
+
+    "x-scheme-handler/terminal" = [ "kitty.desktop" ];
   };
 }

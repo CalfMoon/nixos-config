@@ -51,15 +51,39 @@
     };
   };
 
-  services.xserver.desktopManager.budgie.enable = true;
-  environment.budgie.excludePackages = with pkgs; [
+  services.desktopManager.gnome.enable = true;
+  environment.gnome.excludePackages = (with pkgs; [
+    atomix # puzzle game
+    cheese # webcam tool
+    epiphany # web browser
+    evince # document viewer
+    geary # email reader
+    gedit # text editor
+    gnome-characters
+    gnome-calculator
+    gnome-calendar
+    gnome-clocks
+    gnome-connections
+    gnome-music
+    gnome-photos
     gnome-terminal
-    mate.atril
-    mate.mate-calc
-    mate.eom
-    mate.pluma
-    mate.engrampa
-    vlc
-  ];
+    gnome-text-editor
+    gnome-weather
+    gnome-maps
+    gnome-user-docs
+    simple-scan
+    gnome-console
+    gnome-contacts
+    gnome-disk-utility
+    papers
+    gnome-tour
+    decibels
+    snapshot
+    hitori # sudoku game
+    iagno # go game
+    tali # poker game
+    totem # video player
+  ]);
+
   services.gnome.rygel.enable = false;
 }

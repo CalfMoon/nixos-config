@@ -9,29 +9,35 @@
       open_editor = ''$$EDITOR .'';
 
       mkdir = ''
-            ''${{
+        ''${{
         printf "Directory Name: "
         read ans
         mkdir "$ans"
-            }}'';
+        }}'';
 
       mkfile = ''
-            ''${{
+        ''${{
         printf "File Name: "
         read ans
         touch "$ans"
-            }}'';
+        }}'';
 
 
       unarchive = ''
         ''${{
-          case "$f" in
-              *.zip) ${pkgs.unzip}/bin/unzip "$f" ;;
-              *.tar.gz) ${pkgs.gnutar}/bin/tar -xzvf "$f" ;;
-              *.tar.bz2) ${pkgs.gnutar}/bin/tar -xjvf "$f" ;;
-              *.tar) ${pkgs.gnutar}/bin/tar -xvf "$f" ;;
-              *) echo "Unsupported format" ;;
-          esac
+        case "$f" in
+            *.zip) ${pkgs.unzip}/bin/unzip "$f" ;;
+
+            *.tar.gz) ${pkgs.gnutar}/bin/tar -xzvf "$f" ;;
+            *.tar.bz2) ${pkgs.gnutar}/bin/tar -xjvf "$f" ;;
+            *.tar) ${pkgs.gnutar}/bin/tar -xvf "$f" ;;
+
+            *.rar) ${pkgs.unrar}/bin/unrar x "$f" ;;
+
+            *.7z) ${pkgs.p7zip}/bin/7z x "$f" ;;
+
+            *) echo "Unsupported format" ;;
+        esac
         }}'';
 
       archive = ''
@@ -45,23 +51,20 @@
 
       trash = ''
         ''${{
-          files=$(printf "$fx" | tr '\n' ';')
-          while [ "$files" ]; do
-            file=''${files%%;*}
+        files=$(printf "$fx" | tr '\n' ';')
+        while [ "$files" ]; do
+          file=''${files%%;*}
 
-            ${pkgs.trash-cli}/bin/trash-put "$(basename "$file")"
-            if [ "$files" = "$file" ]; then
-              files=""
-        else
-        files="''${files#*;}"
-        fi
+          ${pkgs.trash-cli}/bin/trash-put "$(basename "$file")"
+          if [ "$files" = "$file" ]; then
+            files=""
+          else
+             files="''${files#*;}"
+          fi
         done
         }}'';
 
-      restore_trash = ''
-              ''${{
-          ${pkgs.trash-cli}/bin/trash-restore
-        }}'';
+      restore_trash = ''${pkgs.trash-cli}/bin/trash-restore'';
     };
 
     keybindings = {
@@ -80,7 +83,7 @@
       dd = "trash";
       dr = "restore_trash";
 
-      "." = "set hidden!";
+      H = "set hidden!";
       p = "paste";
       x = "cut";
       y = "copy";
@@ -121,7 +124,7 @@
     tw      t       # STICKY_OTHER_WRITABLE
     ow             # OTHER_WRITABLE
     st      t       # STICKY
-    di            # DIR
+    di             # DIR
     pi      p       # FIFO
     so      s       # SOCK
     bd      b       # BLK
@@ -129,7 +132,7 @@
     su      u       # SETUID
     sg      g       # SETGID
     ex             # EXEC
-    fi            # FILE
+    fi             # FILE
 
     # file extensions (vim-devicons)
     *.styl          

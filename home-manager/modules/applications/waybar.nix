@@ -25,7 +25,7 @@
     style = ''
       * {
         border: none;
-        font-family: JetBrains Mono NL;
+        font-family: "JetBrains Mono NL";
         font-size: 15px;
       }
 
@@ -87,8 +87,8 @@
 
   xdg.configFile."waybar/default-modules.json".text = ''
     {
-        "margin": "6 6 0 6",
-        "spacing": 6,
+      "margin": "6 6 0 6",
+      "spacing": 6,
 
       "hyprland/workspaces": {
         "all-outputs": false,
@@ -97,7 +97,7 @@
         "format-icons": {
           "urgent": "",
           "active": "",
-          "default": "",
+          "default": ""
         }
       },
       "mpd": {
@@ -108,34 +108,34 @@
         "interval": 1,
         "state-icons": {
           "paused": "",
-          "playing": "",
+          "playing": ""
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)",
         "on-click": "${pkgs.mpc}/bin/mpc toggle",
         "on-click-right": "$TERMINAL -e ${pkgs.ncmpcpp}/bin/ncmpcpp",
-        "max-length": 50,
+        "max-length": 50
       },
       "clock": {
         "tooltip-format": "{:%Y %B}",
         "format": "{:%I:%M %p}",
         "format-alt": "{:%a - %b %d, %Y}",
-        "on-click-right": "$TERMINAL -e ${pkgs.calcurse}/bin/calcurse",
+        "on-click-right": "$TERMINAL -e ${pkgs.calcurse}/bin/calcurse"
       },
       "pulseaudio": {
         "scroll-step": 1,
         "format": "{volume}% {icon}",
         "format-muted": "{volume}% ",
         "format-icons": {
-          "default": [""],
+          "default": [""]
         },
         "on-click": "${pkgs.pulseaudio}/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "$TERMINAL -e ${pkgs.pulsemixer}/bin/pulsemixer",
+        "on-click-right": "$TERMINAL -e ${pkgs.pulsemixer}/bin/pulsemixer"
       },
       "tray": {
         "icon-size": 20,
-        "spacing": 5,
-      },
+        "spacing": 5
+      }
     }
   '';
 }

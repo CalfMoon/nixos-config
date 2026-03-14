@@ -4,6 +4,7 @@
     # lsp
     lua-language-server
     rustup
+    wget
 
     # formatter
     stylua

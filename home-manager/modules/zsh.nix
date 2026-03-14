@@ -8,7 +8,7 @@
     };
 
     history.size = 0;
-    dotDir = config.xdg.configHome + "/zsh"; 
+    dotDir = config.xdg.configHome + "/zsh";
 
     shellAliases = {
       ls = "${pkgs.eza}/bin/exa -al --color=always --group-directories-first";
@@ -20,7 +20,8 @@
       "..." = "cd ../..";
       "...." = "cd ../../..";
 
-      config = "git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME";
+
+      # config = "git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME";
       capSwap = "setxkbmap -option 'ctrl:nocaps'";
     };
     plugins = [{

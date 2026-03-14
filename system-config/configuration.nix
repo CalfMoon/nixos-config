@@ -60,7 +60,7 @@
 
   fonts.fontconfig = {
     defaultFonts = {
-      monospace = [ "JetBrains Mono" ];
+      monospace = [ "JetBrains Mono NL" ];
       serif = [ "Roboto Serif" ];
       sansSerif = [ "Roboto" ];
     };

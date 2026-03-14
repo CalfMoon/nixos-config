@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    opusTools
+    opus-tools
     mpc
   ];
 
@@ -206,7 +206,7 @@
         cover_format = "jpeg";
       };
       embedart.auto = true;
-      advancedrewrite = [ {"albumartist Ye" = "Kanye";} ];
+      advancedrewrite = [{ "albumartist Ye" = "Kanye"; }];
     };
   };
 
