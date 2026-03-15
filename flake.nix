@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "System flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -23,21 +23,24 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { nixpkgs, home-manager, spicetify-nix, catppuccin, ... } @inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { nixpkgs, home-manager, catppuccin, ... } @inputs: {
+    nixosConfigurations.nixDesktop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
 
       modules = [
         ./system-config/configuration.nix
+        ./system-config/desktop/specific-settings.nix
 
         catppuccin.nixosModules.catppuccin
+        inputs.nur.modules.nixos.default
         home-manager.nixosModules.home-manager
         {
           home-manager = {
             users.mooney.imports = [
               ./home-manager/home.nix
+              ./home-manager/desktop/specific-settings.nix
               catppuccin.homeModules.catppuccin
-              spicetify-nix.homeManagerModules.spicetify
+              inputs.spicetify-nix.homeManagerModules.spicetify
             ];
 
             extraSpecialArgs = { inherit inputs; };

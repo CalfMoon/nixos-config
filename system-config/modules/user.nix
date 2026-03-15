@@ -7,6 +7,6 @@
     isNormalUser = true;
     description = "Kritagya Bhattarai";
     extraGroups = [ "networkmanager" "wheel" ];
-    initialHashedPassword = "test";
+    initialHashedPassword = "$y$j9T$fB5lbzmCYuIkgq4WGdAVR.$8CchBe0ua.fttEy0n5AdzfaPrf9EID/ckzLKeKDmgz9";
   };
 }

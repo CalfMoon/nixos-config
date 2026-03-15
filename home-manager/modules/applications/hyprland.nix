@@ -13,7 +13,7 @@
 
     enable = true;
     settings = {
-      source = [ "./theme.conf" "./monitor.conf" ];
+      source = [ "./theme.conf" ];
 
       "$accentColor" = "$green";
       "$accentAlpha" = "$greenAlpha";
@@ -21,17 +21,7 @@
       exec-once = [
         "${pkgs.swww}/bin/swww-daemon --format xrgb"
         "${pkgs.waybar}/bin/waybar"
-        "${pkgs.qbittorrent}/bin/qbittorrent"
-      ];
-
-      env = [
-        "LIBVA_DRIVER_NAME,nvidia"
-        "XDG_SESSION_TYPE,wayland"
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        "NIXOS_OZONE_WL,1"
-        "NVD_BACKEND,direct"
+        # "${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       input = {
@@ -73,18 +63,6 @@
 
         dim_inactive = true;
         dim_strength = 0.2;
-      };
-
-      animations = {
-        enabled = true;
-        bezier = "myBezier, 0, 0, 0, 0";
-        animation = [
-          "windows, 1, 2, myBezier, slide"
-          "windowsOut, 1, 2, myBezier, slide"
-          "fade, 1, 2, myBezier"
-          "workspaces, 1, 2, myBezier"
-          "specialWorkspace, 1, 2, myBezier, slidevert"
-        ];
       };
 
       dwindle = {
@@ -201,7 +179,6 @@
 
       "$accentColor" = "$green";
       "$accentAlpha" = "$greenAlpha";
-      "$mainMonitor" = "HDMI-A-1";
 
       general = {
         disable_loading_bar = true;

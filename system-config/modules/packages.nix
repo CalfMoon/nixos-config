@@ -1,6 +1,21 @@
 { pkgs, ... }: {
+  services.flatpak.enable = true;
+
+  virtualisation = {
+    docker = {
+      enable = true;
+      package = pkgs.docker_28;
+    };
+  };
+  users.users.mooney.extraGroups = [ "docker" ];
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    #virtualization
+    qemu
+
     #terminal utilities
     zip
     unzip
@@ -11,10 +26,6 @@
     xclip
     calcurse
     fastfetch
-
-    tailscale
-
-    papirus-icon-theme
 
     # build stuff
     meson
@@ -40,6 +51,7 @@
 
     #general applications
     brave
+    nur.repos.vieb-nix.vieb
     libreoffice
     nautilus
     pavucontrol
@@ -55,6 +67,8 @@
     sqlite
     sqlitestudio
     plattenalbum
+    papirus-icon-theme
+    lxqt.lxqt-policykit
 
     #gaming
     wine
