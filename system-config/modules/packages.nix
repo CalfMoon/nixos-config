@@ -11,10 +11,20 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.10"
+  ];
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     #virtualization
     qemu
+
+    (vivaldi.overrideAttrs (oldAttrs: {
+      dontWrapQtApps = false;
+      dontPatchELF = true;
+      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
+    }))
 
     #terminal utilities
     zip
@@ -26,6 +36,7 @@
     xclip
     calcurse
     fastfetch
+    ventoy-full
 
     # build stuff
     meson
@@ -73,7 +84,7 @@
     #gaming
     wine
     lutris
-    heroic
+    # heroic
     appimage-run
     prismlauncher
     steam

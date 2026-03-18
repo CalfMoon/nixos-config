@@ -7,8 +7,15 @@
     swww
   ];
 
+  nix.settings = {
+    trusted-substituters = [ "https://hyprland.cachix.org" ];
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
+
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
 
     enable = true;
@@ -197,7 +204,7 @@
           text = ''cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"'';
           color = "$text";
           font_size = 25;
-          font_family = "Roboto";
+          font_family = "Jetbrains Mono NL";
           position = "-30, -150";
           halign = "right";
           valign = "top";

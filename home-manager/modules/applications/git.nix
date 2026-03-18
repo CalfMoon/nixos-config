@@ -10,7 +10,7 @@
     };
     signing = {
       signByDefault = false;
-      key = "6200C8E7415347E0";
+      key = "0E548339B75F8117";
     };
   };
 }
