@@ -18,6 +18,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     catppuccin.url = "github:catppuccin/nix";
@@ -28,8 +33,8 @@
       specialArgs = { inherit inputs; };
 
       modules = [
-        ./system-config/configuration.nix
-        ./system-config/desktop/specific-settings.nix
+        ./system-config
+        ./system-config/desktop
 
         catppuccin.nixosModules.catppuccin
         inputs.nur.modules.nixos.default
@@ -37,8 +42,8 @@
         {
           home-manager = {
             users.mooney.imports = [
-              ./home-manager/home.nix
-              ./home-manager/desktop/specific-settings.nix
+              ./home-manager
+              ./home-manager/desktop
               catppuccin.homeModules.catppuccin
               inputs.spicetify-nix.homeManagerModules.spicetify
             ];

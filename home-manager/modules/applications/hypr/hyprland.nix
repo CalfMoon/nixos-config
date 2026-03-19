@@ -1,17 +1,10 @@
 { pkgs, inputs, ... }: {
-  xdg.configFile."hypr/theme.conf".source = ./mocha.conf;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
   home.packages = with pkgs; [
     waypaper
     swww
   ];
-
-  nix.settings = {
-    trusted-substituters = [ "https://hyprland.cachix.org" ];
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-  };
 
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -176,109 +169,6 @@
               ])
             10)
         );
-    };
-  };
-
-  programs.hyprlock = {
-    enable = true;
-    settings = {
-      source = "./theme.conf";
-
-      "$accentColor" = "$green";
-      "$accentAlpha" = "$greenAlpha";
-
-      general = {
-        disable_loading_bar = true;
-        hide_cursor = true;
-      };
-
-      background = {
-        monitor = "";
-        blur_passes = 0;
-        color = "$base";
-      };
-
-      label = [
-        {
-          monitor = "$mainMonitor";
-          text = ''cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"'';
-          color = "$text";
-          font_size = 25;
-          font_family = "Jetbrains Mono NL";
-          position = "-30, -150";
-          halign = "right";
-          valign = "top";
-        }
-        {
-          monitor = "$mainMonitor";
-          text = ''cmd[update:30000] echo "$(date +"%R")"'';
-          color = "$text";
-          font_size = 90;
-          position = "-30, 0";
-          halign = "right";
-          valign = "top";
-        }
-      ];
-
-      image = {
-        monitor = "$mainMonitor";
-        path = "$HOME/Pictures/pfp.png";
-        size = 200;
-        border_color = "$accentColor";
-
-        position = "0, 75";
-        halign = "center";
-        valign = "center";
-      };
-
-      input-field = {
-        monitor = "$mainMonitor";
-        size = "300, 60";
-        outline_thickness = 4;
-        dots_size = 0.2;
-        dots_spacing = 0.2;
-        dots_center = true;
-        outer_color = "$accentColor";
-        inner_color = "$surface0";
-        font_color = "$text";
-        fade_on_empty = false;
-        placeholder_text = ''<span foreground="##$textAlpha"><i>󰌾 Logged in as </i><span foreground="##$accentAlpha">$USER</span></span>'';
-        hide_input = false;
-        check_color = "$accent";
-        fail_color = "$red";
-        fail_text = ''<i>$FAIL <b>($ATTEMPTS)</b></i>'';
-        capslock_color = "$yellow";
-        position = "0, -80";
-        halign = "center";
-        valign = "center";
-      };
-    };
-  };
-
-  services.hypridle = {
-    enable = true;
-    settings = {
-      general = {
-        lock_cmd = "pidof hyprlock || hyprlock"; # avoid starting multiple hyprlock instances.
-        before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
-        after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key twice to turn on the display.
-      };
-
-      listner = [
-        {
-          timeout = 300;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-        {
-          timeout = 420;
-          on-timeout = "${pkgs.mpc}/bin/mpc -q pause & loginctl lock-session";
-        }
-        {
-          timeout = 900;
-          on-timeout = "systemctl suspend";
-        }
-      ];
     };
   };
 }

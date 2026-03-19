@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   services.flatpak.enable = true;
 
   virtualisation = {
@@ -19,12 +19,6 @@
   environment.systemPackages = with pkgs; [
     #virtualization
     qemu
-
-    (vivaldi.overrideAttrs (oldAttrs: {
-      dontWrapQtApps = false;
-      dontPatchELF = true;
-      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
-    }))
 
     #terminal utilities
     zip
@@ -62,6 +56,7 @@
 
     #general applications
     brave
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     nur.repos.vieb-nix.vieb
     libreoffice
     nautilus

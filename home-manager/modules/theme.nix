@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   catppuccin = {
     accent = "green";
     flavor = "mocha";
@@ -29,7 +28,7 @@
     theme = {
       name = "Catppuccin-GTK-Green-Dark";
       package = pkgs.magnetic-catppuccin-gtk.override {
-        accent = ["green"];
+        accent = [ "green" ];
         size = "standard";
         tweaks = [ "black" ];
       };

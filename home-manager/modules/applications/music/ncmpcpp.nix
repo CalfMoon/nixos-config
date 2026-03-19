@@ -1,37 +1,4 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    opus-tools
-    mpc
-  ];
-
-  services.mpd = {
-    enable = true;
-    musicDirectory = /home/mooney/Music;
-    playlistDirectory = /home/mooney/Music/.playlist;
-
-    network.listenAddress = "any";
-    network.startWhenNeeded = true;
-
-    extraConfig = ''
-      auto_update "yes"
-      restore_paused "yes"
-      bind_to_address "localhost"
-      max_output_buffer_size "16384"
-
-      audio_output {
-              type "pipewire"
-              name "PipeWire Sound Server"
-      }
-
-      audio_output {
-          type "fifo"
-          name "my_fifo"
-          path "/tmp/mpd.fifo"
-          format "44100:16:2"
-      }
-    '';
-  };
-
+{ ... }: {
   programs.ncmpcpp = {
     enable = true;
     bindings = [
@@ -185,29 +152,5 @@
       lyrics_fetchers = "genius, tekstowo, justsomelyrics, zeneszoveg, internet";
 
     };
-
   };
-
-  programs.beets = {
-    enable = true;
-    settings = {
-      original_date = "yes";
-      import.move = true;
-
-      plugins = [ "musicbrainz" "lastgenre" "advancedrewrite" "fetchart" "embedart" ];
-      lastgenre = {
-        source = "album";
-        separator = "; ";
-        count = 3;
-        force = true;
-      };
-      fetchart = {
-        auto = true;
-        cover_format = "jpeg";
-      };
-      embedart.auto = true;
-      advancedrewrite = [{ "albumartist Ye" = "Kanye"; }];
-    };
-  };
-
 }

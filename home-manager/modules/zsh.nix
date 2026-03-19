@@ -1,5 +1,4 @@
-{ pkgs, lib, config, ... }:
-{
+{ pkgs, lib, config, ... }: {
   home.packages = [ pkgs.libnotify ];
   programs.zsh = {
     enable = true;

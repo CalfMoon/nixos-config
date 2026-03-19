@@ -1,7 +1,7 @@
 { config, ... }: {
   home.sessionVariables = {
     ## Applications
-    BROWSER = "vivaldi";
+    BROWSER = "brave";
     TERMINAL = "kitty";
     TERM = "kitty";
     EDITOR = "nvim";
