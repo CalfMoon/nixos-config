@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
   services.flatpak.enable = true;
 
   virtualisation = {
@@ -36,28 +36,27 @@
     meson
     ninja
     gcc
-    deno
     cmake
+    wget
     gnumake
-    go
+    gradle
 
     #programming stuff
     vscodium
+    zed-editor
     neovim
 
     luajitPackages.luarocks
-    wget
+    nodejs_24
     rustup
     python3
-    jdk
     pipx
-    nodePackages_latest.nodejs
-    orca
+    jdk
+    kotlin
 
     #general applications
     brave
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    nur.repos.vieb-nix.vieb
+    tor-browser
     libreoffice
     nautilus
     pavucontrol

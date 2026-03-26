@@ -32,9 +32,12 @@
   services.xserver.xkb.layout = "us";
 
 
-  networking.firewall.allowedTCPPorts = [ 8384 22000 53317 6600 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 53317 6600 ];
-  networking.firewall.enable = false;
+  # sshd: 22
+  # syncthing: 22000, 21027
+  # local send: 53317 
+  networking.firewall.allowedTCPPorts = [ 22 22000 53317 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 53317 ];
+  networking.firewall.enable = true;
 
 
   fonts.fontconfig = {
@@ -45,5 +48,5 @@
     };
   };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.11";
 }

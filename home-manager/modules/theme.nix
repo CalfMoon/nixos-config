@@ -21,6 +21,7 @@
   catppuccin.cursors.enable = true;
 
   gtk = {
+    gtk4.theme = null;
     enable = true;
     font.name = "Roboto";
     font.size = 12;

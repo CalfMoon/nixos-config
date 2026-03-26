@@ -19,4 +19,14 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-gtk2;
   };
+
+  programs.nix-ld.enable = true;
+
+  services.openssh.enable = true;
+  services.openssh.settings = {
+    PasswordAuthentication = false;
+    PermitRootLogin = "no";
+    AllowUsers = [ "mooney" ];
+    Port = 22;
+  };
 }

@@ -8,6 +8,7 @@
   services.xserver.excludePackages = [ pkgs.xterm ];
 
   catppuccin = {
+    cache.enable = true;
     flavor = "mocha";
     accent = "green";
     tty.enable = true;

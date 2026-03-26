@@ -125,7 +125,7 @@
       "pulseaudio": {
         "scroll-step": 1,
         "format": "{volume}% {icon}",
-        "format-muted": "{volume}% ",
+        "format-muted": "{volume}% ",
         "format-icons": {
           "default": [""]
         },

@@ -31,12 +31,10 @@
     PASSWORD_STORE_DIR = "${config.home.sessionVariables.XDG_DATA_HOME}/password-store";
     GOPATH = "${config.home.sessionVariables.XDG_DATA_HOME}/go";
     CARGO_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/cargo";
-    JAVA_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/java";
     RUSTUP_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/rustup";
     XCURSOR_PATH = "${config.home.sessionVariables.XDG_DATA_HOME}/icons";
 
     NOTMUCH_CONFIG = "${config.home.sessionVariables.XDG_CONFIG_HOME}/notmuch-config";
-    _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.home.sessionVariables.XDG_CONFIG_HOME}/java";
     PARALLEL_HOME = "${config.home.sessionVariables.XDG_CONFIG_HOME}/parallel";
     WGETRC = "${config.home.sessionVariables.XDG_CONFIG_HOME}/wget/wgetrc";
     MBSYNCRC = "${config.home.sessionVariables.XDG_CONFIG_HOME}/mbsync/config";

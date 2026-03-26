@@ -1,17 +1,22 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    # lsp
-    lua-language-server
+    # for rust formatter and language server
     rustup
-    wget
 
-    # formatter
-    stylua
-
-    # debugger
-    vscode-extensions.vadimcn.vscode-lldb.adapter
-
+    # for telescope
     ripgrep
+
+    # for github plugins
     gh
+
+    # build lazy packages
+    # dbee
+    wget
+    # telescope-fzf-native
+    gnumake
+    # Markdown preview
+    deno
+
+    # build mason packages
   ];
 }
