@@ -14,6 +14,6 @@
     ./rofi
     ./spotify.nix
     ./zathura.nix
-    ./waybar.nix
+    ./waybar
   ];
 }

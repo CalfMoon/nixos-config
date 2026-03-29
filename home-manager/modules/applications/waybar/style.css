@@ -1,0 +1,59 @@
+* {
+  border: none;
+  font-family: "JetBrains Mono NL";
+  font-size: 15px;
+}
+
+box.module {
+  min-height: 10px;
+}
+
+window#waybar {
+  background: transparent;
+  color: #1e1e2e;
+}
+
+#clock,
+#pulseaudio,
+#mpd,
+#workspaces,
+#tray {
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px;
+}
+
+#clock {
+  background: #89b4fa;
+}
+
+#pulseaudio {
+  background: #89dceb;
+}
+
+#pulseaudio.muted {
+  color: #9399b2;
+}
+
+#mpd {
+  background: #f38ba8;
+}
+
+#tray {
+  background: #fab387;
+}
+
+#workspaces {
+  background: #a6e3a1;
+}
+
+#workspaces button {
+  color: #585b70;
+}
+
+#workspaces button.active {
+  color: #45475a;
+}
+
+#workspaces button.urgent {
+  color: #f38ba8;
+}

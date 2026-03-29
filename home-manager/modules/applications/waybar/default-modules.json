@@ -1,0 +1,51 @@
+{
+  "margin": "6 6 0 6",
+  "spacing": 6,
+
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "mpd": {
+    "format": "{stateIcon} {albumArtist} - {title} ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 1,
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click": "mpc toggle",
+    "on-click-right": "$TERMINAL -e ncmpcpp",
+    "max-length": 50
+  },
+  "clock": {
+    "tooltip-format": "{:%Y %B}",
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%a - %b %d, %Y}",
+    "on-click-right": "$TERMINAL -e calcurse"
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{volume}% {icon}",
+    "format-muted": "{volume}% ",
+    "format-icons": {
+      "default": [""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "$TERMINAL -e pulsemixer"
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 5
+  }
+}
