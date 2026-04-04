@@ -43,8 +43,8 @@
 
     #programming stuff
     vscodium
-    zed-editor
     neovim
+    neovide
 
     luajitPackages.luarocks
     nodejs_24

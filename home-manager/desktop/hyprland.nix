@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [ "HDMI-A-1,1920x1080@60,1366x0,1" "DP-1,1366x768@60,0x312,1" ];
@@ -11,6 +11,10 @@
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         "NIXOS_OZONE_WL,1"
         "NVD_BACKEND,direct"
+      ];
+
+      exec-once = [
+        "${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       animations = {

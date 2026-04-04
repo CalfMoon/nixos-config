@@ -16,15 +16,15 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = true;
+    powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/310b45f0-0b2e-4b7a-b4cf-dba2348849ae";
+    device = "/dev/disk/by-uuid/04a87301-633a-49bf-8479-685444e6000a";
     fsType = "ext4";
   };
 
@@ -35,7 +35,22 @@
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/919823e4-7b36-4880-b8b0-dace12248031";
+    device = "/dev/disk/by-uuid/4bca1fc2-bf72-4d34-a64f-c44eebccb4cb";
+    fsType = "ext4";
+  };
+
+  fileSystems."/home/mooney/Games" = {
+    device = "/dev/disk/by-uuid/a0c0b369-cfeb-404e-bc77-b833bd4346b5";
+    fsType = "ext4";
+  };
+
+  fileSystems."/home/mooney/Games/torrent" = {
+    device = "/dev/disk/by-uuid/9ced3c7d-bb17-493d-b2cc-3fc1a707b7be";
+    fsType = "ext4";
+  };
+
+  fileSystems."/home/mooney/Backup" = {
+    device = "/dev/disk/by-uuid/cc67c36a-9ea5-4ff9-a8b2-d5c31db5368b";
     fsType = "ext4";
   };
 

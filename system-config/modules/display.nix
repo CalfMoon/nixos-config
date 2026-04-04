@@ -38,6 +38,7 @@
     theme = "catppuccin-mocha-green";
     package = pkgs.kdePackages.sddm;
   };
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   programs.hyprland = {
     enable = true;

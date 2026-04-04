@@ -3,7 +3,7 @@
 
   home.packages = with pkgs; [
     waypaper
-    swww
+    awww
   ];
 
   wayland.windowManager.hyprland = {
@@ -19,9 +19,8 @@
       "$accentAlpha" = "$greenAlpha";
 
       exec-once = [
-        "${pkgs.swww}/bin/swww-daemon --format xrgb"
+        "${pkgs.awww}/bin/awww-daemon --format xrgb"
         "${pkgs.waybar}/bin/waybar"
-        # "${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       input = {
