@@ -1,5 +1,8 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    # download tree-sitter parsers
+    tree-sitter
+
     # for rust formatter and language server
     rustup
 
@@ -18,5 +21,6 @@
     deno
 
     # build mason packages
+    # [ ]
   ];
 }

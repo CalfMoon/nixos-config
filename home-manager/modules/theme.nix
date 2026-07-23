@@ -2,6 +2,8 @@
   catppuccin = {
     accent = "green";
     flavor = "mocha";
+    enable = true;
+    autoEnable = false;
   };
 
   qt = {
@@ -14,6 +16,7 @@
   catppuccin.kvantum.apply = false;
 
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     size = 24;

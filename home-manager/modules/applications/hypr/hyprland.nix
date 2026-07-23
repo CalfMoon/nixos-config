@@ -65,7 +65,6 @@
       };
 
       dwindle = {
-        pseudotile = "yes";
         preserve_split = true;
         default_split_ratio = 1;
 

@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   services.flatpak.enable = true;
 
   virtualisation = {
     docker = {
       enable = true;
-      package = pkgs.docker_28;
+      package = pkgs.docker;
     };
   };
   users.users.mooney.extraGroups = [ "docker" ];
@@ -12,7 +12,7 @@
   programs.virt-manager.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.10"
+    "ventoy-1.1.12"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -58,6 +58,8 @@
     brave
     tor-browser
     libreoffice
+    readest
+    calibre
     nautilus
     pavucontrol
     localsend
