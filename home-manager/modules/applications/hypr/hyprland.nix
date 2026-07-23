@@ -7,9 +7,10 @@
   ];
 
   wayland.windowManager.hyprland = {
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
+    configType = "hyprlang";
 
     enable = true;
     settings = {
@@ -34,9 +35,9 @@
       };
 
       plugin = {
-        split-monitor-workspaces = {
-          enable_persistent_workspaces = false;
-        };
+        # split-monitor-workspaces = {
+        #   enable_persistent_workspaces = false;
+        # };
       };
 
       general = {
@@ -162,8 +163,8 @@
                 ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
               in
               [
-                "$mainMod, ${ws}, split-workspace, ${toString (x + 1)}"
-                "$mainMod SHIFT, ${ws}, split-movetoworkspacesilent, ${toString (x + 1)}"
+                "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
+                "$mainMod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
               ])
             10)
         );
