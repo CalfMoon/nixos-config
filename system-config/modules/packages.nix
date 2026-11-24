@@ -12,7 +12,7 @@
   programs.virt-manager.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.12"
+    "ventoy-1.1.18"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -39,12 +39,13 @@
     cmake
     wget
     gnumake
-    gradle
+    gradle_9
 
     #programming stuff
     vscodium
     neovim
     neovide
+    android-studio
 
     luajitPackages.luarocks
     nodejs_24
@@ -84,7 +85,9 @@
     appimage-run
     prismlauncher
     steam
+
     protonup-qt
+    steamtinkerlaunch
     ryubing
     libgudev
   ];

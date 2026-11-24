@@ -2,7 +2,7 @@
   programs.beets = {
     enable = true;
     settings = {
-      original_date = "yes";
+      original_date = true;
       directory = "~/Music/";
       import.move = true;
 

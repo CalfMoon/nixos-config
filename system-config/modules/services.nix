@@ -13,11 +13,13 @@
     pulse.enable = true;
   };
 
+  services.tailscale.enable = true;
+
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-gtk2;
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
 
   programs.nix-ld.enable = true;

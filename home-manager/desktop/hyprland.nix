@@ -14,7 +14,7 @@
       ];
 
       exec-once = [
-        "${pkgs.qbittorrent}/bin/qbittorrent"
+        # "${pkgs.qbittorrent}/bin/qbittorrent"
       ];
 
       animations = {

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, pkgs-stable, inputs, ... }: {
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
   home.packages = with pkgs; [
@@ -7,11 +7,12 @@
   ];
 
   wayland.windowManager.hyprland = {
+    package = pkgs-stable.hyprland;
     # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.stdenv.hostPlatform.system}.split-monitor-workspaces ];
     configType = "hyprlang";
-
+    
     enable = true;
     settings = {
       source = [ "./theme.conf" ];

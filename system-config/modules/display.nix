@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, pkgs-stable, inputs, ... }: {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -8,6 +8,8 @@
   services.xserver.excludePackages = [ pkgs.xterm ];
 
   catppuccin = {
+    enable = true;
+    autoEnable = false;
     cache.enable = true;
     flavor = "mocha";
     accent = "green";
@@ -40,8 +42,14 @@
   };
   security.pam.services.sddm.enableGnomeKeyring = true;
 
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
+
   programs.hyprland = {
     enable = true;
+    package = pkgs-stable.hyprland;
     # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
